@@ -1,0 +1,151 @@
+//1.Gas
+READ price
+READ gallons
+READ payment
+IF price<=0 THEN 
+    DISPLAY ERROR 
+ELSE
+   COMPUTE totalPrice AS price *gallons
+   IF payment=“Credit” THEN
+         COMPUTE totalPrice AS totalPrice*1.1
+    ENDIF
+    DISPLAY totalPrice
+ENDIF
+
+
+//a. Inputs: gallons, payment, price
+//b. Outputs: Price
+//c. Error Conditions: Negative
+//e. [Gallons, Payment, Price]
+//   [1 gallon, cash, totalprice]
+//   [1 gallon, credit, price*1.1=totalprice]
+//   [-2 gallon, ERROR]
+//f. Min number of operations: 5
+//g. Max number of operations: 8
+
+-------------------------------------------------------
+
+//2.Train Ticket
+READ age
+READ location // 0 = train station, 1=train
+IF age < 0 or age > 120 then
+	DISPLAY ERROR
+ELSE
+	IF age < 7 THEN
+		SET price AS 0.0
+	ELSE IF age >= 7 and age <= 65 THEN
+		SET price AS 13.20
+	ELSE IF age > 65 THEN
+		SET price AS 7.5
+	ENDIF
+	IF location != 0 THEN
+		COMPUTE price AS price * 1.2
+	ENDIF
+	DISPLAY price
+ENDIF
+
+
+//a. Inputs: Age, Location
+//b. Outputs: Price
+//c. Error conditions: If younger than 0 or older than 120
+//e. [Age, location, Price]
+//   [-1, ERROR]
+//   [121, ERROR]
+//   [0, 0, 0.00]
+//   [120, 0, 7.50]
+//   [7, 0, 13.20]
+//   [65, 0, 13.20]
+//   [6, 0, 0.00]
+//   [66, 1, 7.50*1.2]
+//   [64, 1, 13.20*1.2]
+//   [5, 1, 0.00]
+//f. Min number of operations: 4
+//g. Max number of operations: 12
+
+-------------------------------------------------------
+
+//3. WCS111 FM
+READ hours
+IF hours < 1 THEN
+	DISPLAY No prize for you!
+ELSE
+	IF hours >= 1 and hours <= 5 THEN
+		DISPLAY You win a T-Shirt!
+	ELSE IF hours >= 6 and hours <= 400 THEN
+		IF hours % 3 is 0
+			DISPLAY You win a TV!
+		ENDIF
+		IF hours % 2 is 0 THEN
+			DISPLAY You win a hat!
+		ENDIF
+		IF hours % 10 is 9 THEN
+			DISPLAY You win a laptop!
+		ENDIF
+	ELSE IF hours > 400 THEN
+		DISPLAY You win a cat!
+	ENDIF
+ENDIF
+
+
+//a. Inputs: hours
+//b. Outputs: Prize
+//c. Error Conditions: none
+//e. [hours, prize]
+//   [0, No Prize]
+//   [1, T-Shirt]
+//   [5, T-Shirt]
+//   [6, Hat & TV]
+//   [400, Hat]
+//   [399, Laptop & TV]
+//   [7, No Prize]
+//   [401, Cat]
+//   [-1, No Prize]
+//f. Min number of operations: 3
+//g. Max number of operations: 13
+
+-------------------------------------------------------
+
+//4. Lucky Sevens
+READ number
+SET count as 0 
+WHILE number > 0
+	IF number % 10 is 7 then
+		ADD 1 to count
+	ENDIF
+	COMPUTE number as number / 10
+ENDWHILE
+DISPLAY count
+
+
+//a. Inputs: number
+//b. Outputs: Number of 7s in Number
+//c. Error Conditions: Negatives
+//e. [number, number of 7s in number]
+//   [9, 0]
+//   [7, 1]
+//   [2817767, 3]
+//   [7777, 4]
+//   [192, 0]
+//f. Min number of operators: 7
+//g. Max number of operators: 7
+
+-------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

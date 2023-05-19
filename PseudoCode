@@ -1,0 +1,60 @@
+// 1.Gas
+Read Gallons
+Read Gallons Purchased
+Read Cash
+Read Credit
+Read Price
+Set Price to 2.50
+while gallons purchased > 0
+	add 2.50 to price
+	subtract 1 from Gallons
+Endwhile
+if gallons = 0 then
+	display Price
+	if Gallons = 0 then
+		display Cash or Credit
+	if Cash is True then
+		display Insert Cash
+		Else if Credit is True then
+			compute Price as Price*1.10 then
+				display Insert Card
+Endif
+
+
+//2.Train Ticket
+READ age
+READ trainstation
+IF age < 0 or age > 120 then
+	DISPLAY ERROR
+	ELSE
+		IF trainstation is true and age < 7 then
+			DISPLAY Price is Free
+		ELSE IF trainstation is true and age >= 7 and age <= 65 then
+			DISPLAY Price is $13.20
+		ELSE IF trainstation is true and age > 65 then
+			DISPLAY Price is $7.50
+		ELSE IF trainstation is false then
+			COMPUTE Price * 1.2
+				DISPLAY Price
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
